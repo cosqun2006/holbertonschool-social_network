@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Social Network</title>
-</head>
-<body>
-    <h2>Yeni Paylaşım Et</h2>
-    <form action="/" method="POST">
-        <input type="text" placeholder="Adınız" name="name" required><br><br>
-        <input type="text" placeholder="Paylaşım mətni" name="post" required><br><br>
-        <input type="submit" value="Paylaş">
-    </form>
-
-    <hr>
-
-    <h2>Paylaşımlar</h2>
-    {% for post in posts %}
-        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
-            <strong>{{ post[1] }}</strong>: {{ post[2] }}
-        </div>
-    {% endfor %}
-</body>
+    <body>
+        <form action="/" method="POST">
+            <input type="text" placeholder="Your Name" name="name">
+            <input type="text" placeholder="Post content" name="post">
+            <input type="submit" value="Share">
+        </form>
+        {% for post in posts %}
+            <div>{{ post[1] + ": " + post[2] }}</div>
+        {% endfor %}
+    </body>
 </html>

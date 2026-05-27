@@ -15,5 +15,4 @@ def get_posts():
     cur = con.cursor()
     cur.execute('SELECT * FROM posts')
     posts = cur.fetchall()
-    con.close()
     return posts
